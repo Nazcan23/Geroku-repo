@@ -24,6 +24,7 @@ def calculoImc():
     else :
         return jsonify({"Su imc es" : imc, "Clasificacion" : "Valor fuera de las clasificaciones actuales"})
 
+
 @app.route('/hbh/<string:peso>&<string:estatura>&<string:edad>') 
 def harrisBenedictHombre(peso, estatura, edad):
     geb = 66.5 + 13.75 * float(peso) + 5.0 * float(estatura) - 6.79 * float(edad)
