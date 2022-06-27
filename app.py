@@ -7,10 +7,8 @@ def instrucciones():
     return "Api rest para el calculo de la conversion entre las unidades del sistema inlges de longitud a cm"
 
 
-@app.route('/imc/', methods=['GET'])
-def calculoImc():
-    peso = float(request.args.get('peso'))
-    altura = float(request.args.get('altura'))
+@app.route('/imc/<string:peso>&<string:altura>')
+def calculoImc(peso, altura):
     imc = float(peso) / float(altura) **2
 
     if imc < 18.5:
